@@ -65,7 +65,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
         new_chat(context)
     text = update.message.text
     init_msg = await update.message.reply_text(
-        text="Generating...", reply_to_message_id=update.message.message_id
+        text="Từ từ, bình tĩnh...", reply_to_message_id=update.message.message_id
     )
     await update.message.chat.send_action(ChatAction.TYPING)
     # Generate a response using the text-generation pipeline
@@ -136,7 +136,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
 async def handle_image(update: Update, _: ContextTypes.DEFAULT_TYPE) -> None:
     """Handle incoming images with captions and generate a response."""
     init_msg = await update.message.reply_text(
-        text="Generating...", reply_to_message_id=update.message.message_id
+        text="Bình tĩnh nào...", reply_to_message_id=update.message.message_id
     )
     images = update.message.photo
     unique_images: dict = {}
